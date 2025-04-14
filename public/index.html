@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ViralVibe - AI Ad Generator</title>
+  <link rel="stylesheet" href="../src/style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>🔥 ViralVibe</h1>
+    <p>Create viral ads in seconds using AI</p>
+
+    <input type="text" id="product" placeholder="Enter your product or service" />
+
+    <select id="tone">
+      <option value="funny">Funny</option>
+      <option value="emotional">Emotional</option>
+      <option value="bold">Bold</option>
+      <option value="professional">Professional</option>
+    </select>
+
+    <select id="platform">
+      <option value="Instagram">Instagram</option>
+      <option value="TikTok">TikTok</option>
+      <option value="Facebook">Facebook</option>
+      <option value="YouTube Shorts">YouTube Shorts</option>
+    </select>
+
+    <button onclick="generateAd()">Generate Ad 🚀</button>
+
+    <div id="output"></div>
+  </div>
+
+  <script src="../src/main.js"></script>
+</body>
+</html>
