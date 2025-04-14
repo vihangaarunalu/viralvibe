@@ -1,14 +1,15 @@
 {
   "name": "viralvibe",
   "version": "1.0.0",
+  "description": "AI Viral Ad Generator",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "node index.js",
+    "start": "node index.js"
   },
   "keywords": [],
-  "author": "",
+  "author": "Vihanga",
   "license": "ISC",
-  "description": "",
   "dependencies": {
     "cors": "^2.8.5",
     "dotenv": "^16.5.0",
