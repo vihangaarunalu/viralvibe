@@ -32,9 +32,10 @@ app.post('/generate', async (req, res) => {
   }
 });
 
-app.get('/', (req, res) => {
-  res.send('ViralVibe API is live!');
+app.get('/api/data', (req, res) => {
+  res.json({ message: "Hello, World!" });
 });
+
 
 app.listen(port, () => {
   console.log(`Server running on port ${port}`);
