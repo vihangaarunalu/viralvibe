@@ -12,22 +12,21 @@ const port = process.env.PORT || 10000;
 app.use(cors());
 app.use(express.json());
 
-// Initialize OpenAI
 const openai = new OpenAI({
   apiKey: process.env.OPENAI_API_KEY,
 });
 
-// Home route for root path
+// Root test
 app.get('/', (req, res) => {
-  res.send("🎉 ViralVibe API is live! Use POST /generate to interact.");
+  res.send('ViralVibe API is live!');
 });
 
-// Simple test route
+// Test endpoint
 app.get('/api/data', (req, res) => {
   res.json({ message: "Hello, World!" });
 });
 
-// Main route for generating AI responses
+// AI response endpoint
 app.post('/generate', async (req, res) => {
   const { prompt } = req.body;
 
@@ -37,19 +36,17 @@ app.post('/generate', async (req, res) => {
 
   try {
     const response = await openai.chat.completions.create({
-      model: "gpt-4",
-      messages: [{ role: "user", content: prompt }],
+      model: 'gpt-4',
+      messages: [{ role: 'user', content: prompt }],
     });
 
-    const result = response.choices[0].message.content;
-    res.json({ result });
+    res.json({ result: response.choices[0].message.content });
   } catch (err) {
-    console.error("OpenAI error:", err.message);
+    console.error("OpenAI Error:", err.message);
     res.status(500).json({ error: "Something went wrong with OpenAI." });
   }
 });
 
-// Start the server
 app.listen(port, () => {
   console.log(`Server running on port ${port}`);
 });
