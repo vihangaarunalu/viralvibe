@@ -17,7 +17,10 @@ const openai = new OpenAI({
   apiKey: process.env.OPENAI_API_KEY,
 });
 
-// === ROUTES ===
+// Home route for root path
+app.get('/', (req, res) => {
+  res.send("🎉 ViralVibe API is live! Use POST /generate to interact.");
+});
 
 // Simple test route
 app.get('/api/data', (req, res) => {
